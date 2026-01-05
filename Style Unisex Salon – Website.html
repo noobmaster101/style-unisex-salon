@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Style Unisex Salon | Hair & Beauty</title>
+  <meta name="description" content="Professional unisex salon offering haircuts, styling, grooming and beauty services." />
+  <style>
+    :root{
+      --primary:#6a5acd; /* soft indigo */
+      --secondary:#f4c430; /* muted gold */
+      --dark:#222;
+      --light:#fafafa;
+      --card:#ffffff;
+    }
+    *{box-sizing:border-box}
+    body { margin:0; font-family: 'Segoe UI', Arial, sans-serif; color:#333; background:var(--light); }
+    header { background:linear-gradient(135deg, var(--primary), #4b3fbf); color:white; padding:18px 40px; display:flex; justify-content:space-between; align-items:center; }
+    header h1 { margin:0; font-size:26px; letter-spacing:.5px; }
+    nav a { color:white; margin-left:18px; text-decoration:none; font-size:15px; opacity:.95 }
+    nav a:hover { text-decoration:underline; opacity:1 }
+
+    .hero { background:linear-gradient(120deg, rgba(106,90,205,.85), rgba(244,196,48,.75)), url('https://images.pexels.com/photos/3764647/pexels-photo-3764647.jpeg') center/cover no-repeat; color:white; text-align:center; padding:130px 20px; }
+    .hero h2 { font-size:42px; margin-bottom:10px; }
+    .hero p { font-size:18px; max-width:720px; margin:auto; }
+    .cta{margin-top:22px}
+    .btn{display:inline-block; padding:12px 22px; border-radius:8px; background:var(--secondary); color:#222; text-decoration:none; font-weight:600}
+    .btn.alt{background:#fff; color:#333; margin-left:10px}
+
+    .section { padding:60px 40px; max-width:1100px; margin:auto; }
+    .section h3 { text-align:center; font-size:30px; margin-bottom:40px; color:var(--primary) }
+
+    .services { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:20px; }
+    .card { background:var(--card); padding:26px; border-radius:14px; box-shadow:0 10px 22px rgba(0,0,0,0.08); text-align:center; border-top:4px solid var(--secondary) }
+    .card h4 { margin-bottom:12px; }
+
+    /* Gallery with upload placeholders */
+    .gallery { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:16px; }
+    .img-slot{
+      position:relative; height:190px; border-radius:14px; background:#f0f1ff; border:2px dashed rgba(106,90,205,.35);
+      display:flex; align-items:center; justify-content:center; overflow:hidden;
+    }
+    .img-slot img{width:100%; height:100%; object-fit:cover}
+    .upload-ui{
+      text-align:center; color:#4b3fbf; padding:10px
+    }
+    .upload-ui svg{width:36px; height:36px; margin-bottom:6px; opacity:.9}
+    .upload-ui span{display:block; font-size:14px}
+    .upload-ui input{display:none}
+    .upload-ui label{cursor:pointer; display:inline-block; margin-top:6px; padding:6px 10px; border-radius:6px; background:#fff; border:1px solid #d8d9ff}
+
+    .contact { text-align:center; background:linear-gradient(180deg,#ffffff, #f6f6ff); border-radius:18px; padding:40px }
+    .map-link { display:inline-block; margin-top:15px; padding:12px 22px; background:var(--primary); color:white; text-decoration:none; border-radius:8px; }
+    .map-link:hover { filter:brightness(1.05) }
+
+    footer { background:var(--dark); color:#ccc; text-align:center; padding:20px; font-size:14px; }
+    @media (max-width:768px) { .hero h2 {font-size:32px} }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Style Unisex Salon</h1>
+  <nav>
+    <a href="#services">Services</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h2>Colorful. Clean. Professional.</h2>
+  <p>Premium haircuts, grooming, styling and beauty services for everyone.</p>
+  <div class="cta">
+    <a class="btn" href="#contact">Visit Us</a>
+    <a class="btn alt" href="#gallery">View Gallery</a>
+  </div>
+</section>
+
+<section id="services" class="section">
+  <h3>Our Services</h3>
+  <div class="services">
+    <div class="card"><h4>Haircuts</h4><p>Trendy cuts & classic styles.</p></div>
+    <div class="card"><h4>Hair Styling</h4><p>Wash, blowdry & styling.</p></div>
+    <div class="card"><h4>Grooming</h4><p>Beard trims & face care.</p></div>
+    <div class="card"><h4>Beauty</h4><p>Essential beauty services.</p></div>
+  </div>
+</section>
+
+<section id="gallery" class="section">
+  <h3>Gallery (Add Your Photos)</h3>
+  <div class="gallery">
+    <!-- Image Slot 1 -->
+    <div class="img-slot">
+      <div class="upload-ui">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 13v6H5v-6H3v6a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-6z"/><path d="M11 16h2V7h3l-4-4-4 4h3z"/></svg>
+        <span>Salon Interior</span>
+        <label>Upload Image<input type="file" accept="image/*"></label>
+      </div>
+    </div>
+    <!-- Image Slot 2 -->
+    <div class="img-slot">
+      <div class="upload-ui">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 13v6H5v-6H3v6a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-6z"/><path d="M11 16h2V7h3l-4-4-4 4h3z"/></svg>
+        <span>Hair Styling</span>
+        <label>Upload Image<input type="file" accept="image/*"></label>
+      </div>
+    </div>
+    <!-- Image Slot 3 -->
+    <div class="img-slot">
+      <div class="upload-ui">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 13v6H5v-6H3v6a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-6z"/><path d="M11 16h2V7h3l-4-4-4 4h3z"/></svg>
+        <span>Before / After</span>
+        <label>Upload Image<input type="file" accept="image/*"></label>
+      </div>
+    </div>
+    <!-- Image Slot 4 -->
+    <div class="img-slot">
+      <div class="upload-ui">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 13v6H5v-6H3v6a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-6z"/><path d="M11 16h2V7h3l-4-4-4 4h3z"/></svg>
+        <span>Tools & Setup</span>
+        <label>Upload Image<input type="file" accept="image/*"></label>
+      </div>
+    </div>
+  </div>
+  <p style="text-align:center; margin-top:14px; color:#666">Tip: Replace these by uploading your real salon photos when hosting.</p>
+</section>
+
+<section id="contact" class="section">
+  <div class="contact">
+    <h3>Contact / संपर्क करें</h3>
+    <p><strong>Style Unisex Salon</strong></p>
+    <p><strong>Address / पता:</strong><br>
+      B-12, Mahavir Enclave, Barfi Wali Gali, Shop No-6, Palam, New Delhi, Delhi 110045
+    </p>
+    <p><strong>Open / समय:</strong> 10:00 AM – 08:30 PM (Daily)</p>
+    <p><strong>Phone / फ़ोन:</strong> <a href="tel:+918802680374">+91 88026 80374</a></p>
+    <a class="map-link" href="https://maps.app.goo.gl/dq9LJ71h5zQBnKxx7" target="_blank">Open in Google Maps</a>
+  </div>
+</section>
+
+<section id="appointment" class="section">
+  <h3>Book Appointment / अपॉइंटमेंट बुक करें</h3>
+  <div class="contact">
+    <form onsubmit="return sendWhatsApp()">
+      <p>
+        <label>Full Name / पूरा नाम</label><br>
+        <input id="name" type="text" placeholder="Your Name" required style="width:100%;padding:10px;margin-top:6px;border-radius:6px;border:1px solid #ccc;">
+      </p>
+      <p>
+        <label>Phone Number / मोबाइल नंबर</label><br>
+        <input id="phone" type="tel" placeholder="10-digit mobile number" required style="width:100%;padding:10px;margin-top:6px;border-radius:6px;border:1px solid #ccc;">
+      </p>
+      <p>
+        <label>Select Service / सेवा चुनें</label><br>
+        <select id="service" style="width:100%;padding:10px;margin-top:6px;border-radius:6px;border:1px solid #ccc;">
+          <option>Haircut</option>
+          <option>Hair Styling</option>
+          <option>Beard / Grooming</option>
+          <option>Beauty Service</option>
+        </select>
+      </p>
+      <p>
+        <label>Preferred Date & Time / दिन और समय</label><br>
+        <input id="datetime" type="datetime-local" style="width:100%;padding:10px;margin-top:6px;border-radius:6px;border:1px solid #ccc;">
+      </p>
+      <p>
+        <button type="submit" class="btn">Book on WhatsApp / WhatsApp से बुक करें</button>
+      </p>
+      <p style="font-size:14px;color:#666">You will be redirected to WhatsApp to confirm your appointment.</p>
+    </form>
+    <script>
+      function sendWhatsApp(){
+        var name = document.getElementById('name').value;
+        var phone = document.getElementById('phone').value;
+        var service = document.getElementById('service').value;
+        var datetimeRaw = document.getElementById('datetime').value;
+
+        // format date & time nicely
+        var dt = datetimeRaw ? new Date(datetimeRaw) : null;
+        var formattedDT = dt ? dt.toLocaleString() : "Not specified";
+
+        var message = "Hello Style Unisex Salon
+
+" +
+                      "Appointment Request
+" +
+                      "Name: " + name + "
+" +
+                      "Phone: " + phone + "
+" +
+                      "Service: " + service + "
+" +
+                      "Date & Time: " + formattedDT;
+
+        var salonNumber = "918802680374";
+        var url = "https://wa.me/" + salonNumber + "?text=" + encodeURIComponent(message);
+        window.open(url, '_blank');
+        return false;
+      }
+    </script>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Style Unisex Salon. All Rights Reserved.</p>
+<!-- Floating WhatsApp Button -->
+<a href="https://wa.me/918802680374" target="_blank" style="position:fixed;bottom:20px;right:20px;background:#25D366;color:white;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:28px;box-shadow:0 6px 14px rgba(0,0,0,.25);text-decoration:none;z-index:999">💬</a>
+
+<!-- Floating Call Button -->
+<a href="tel:+918802680374" style="position:fixed;bottom:20px;left:20px;background:#0b5ed7;color:white;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:26px;box-shadow:0 6px 14px rgba(0,0,0,.25);text-decoration:none;z-index:999">📞</a>
+
+<footer>
+  <p>© 2026 Style Unisex Salon. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
