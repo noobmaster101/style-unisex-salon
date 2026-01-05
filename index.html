@@ -145,7 +145,58 @@
     <form id="bookingForm" onsubmit="handleBooking(event)">
   <h3>Book Appointment / अपॉइंटमेंट बुक करें</h3>
 
-  <input type="text" id="name" placeholder="Name / नाम" required
+  <input type="text" id="name" placeholder="Name / नाम" required />
+  <input type="tel" id="phone" placeholder="Phone / मोबाइल नंबर" required />
+  <select id="service" required>
+    <option value="">Select Service / सेवा चुनें</option>
+    <option>Haircut</option>
+    <option>Beard Trim</option>
+    <option>Hair Color</option>
+    <option>Facial</option>
+  </select>
+  <input type="datetime-local" id="datetime" required />
+
+  <button type="submit">Book via WhatsApp + Email</button>
+</form>
+
+<form action="https://formsubmit.co/jahid10297@gmail.com" method="POST" id="emailForm" style="display:none;">
+  <input type="hidden" name="Name" id="e_name">
+  <input type="hidden" name="Phone" id="e_phone">
+  <input type="hidden" name="Service" id="e_service">
+  <input type="hidden" name="DateTime" id="e_datetime">
+  <input type="hidden" name="_subject" value="New Salon Appointment">
+  <input type="hidden" name="_captcha" value="false">
+</form>
+
+<script>
+function handleBooking(e) {
+  e.preventDefault();
+
+  const name = document.getElementById('name').value;
+  const phone = document.getElementById('phone').value;
+  const service = document.getElementById('service').value;
+  const dt = document.getElementById('datetime').value;
+
+  // Fill email form
+  document.getElementById('e_name').value = name;
+  document.getElementById('e_phone').value = phone;
+  document.getElementById('e_service').value = service;
+  document.getElementById('e_datetime').value = dt;
+
+  document.getElementById('emailForm').submit();
+
+  // WhatsApp
+  const msg = `Hello Style Unisex Salon
+
+Appointment Booking:
+Name: ${name}
+Phone: ${phone}
+Service: ${service}
+Date & Time: ${dt}`;
+  const url = `https://wa.me/918802680374?text=${encodeURIComponent(msg)}`;
+  window.open(url, '_blank');
+}
+</script>
     <script>
       function sendWhatsApp(){
         var name = document.getElementById('name').value;
