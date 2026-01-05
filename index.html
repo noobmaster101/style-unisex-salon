@@ -142,33 +142,10 @@
 <section id="appointment" class="section">
   <h3>Book Appointment / अपॉइंटमेंट बुक करें</h3>
   <div class="contact">
-    <form onsubmit="return sendWhatsApp()">
-      <p>
-        <label>Full Name / पूरा नाम</label><br>
-        <input id="name" type="text" placeholder="Your Name" required style="width:100%;padding:10px;margin-top:6px;border-radius:6px;border:1px solid #ccc;">
-      </p>
-      <p>
-        <label>Phone Number / मोबाइल नंबर</label><br>
-        <input id="phone" type="tel" placeholder="10-digit mobile number" required style="width:100%;padding:10px;margin-top:6px;border-radius:6px;border:1px solid #ccc;">
-      </p>
-      <p>
-        <label>Select Service / सेवा चुनें</label><br>
-        <select id="service" style="width:100%;padding:10px;margin-top:6px;border-radius:6px;border:1px solid #ccc;">
-          <option>Haircut</option>
-          <option>Hair Styling</option>
-          <option>Beard / Grooming</option>
-          <option>Beauty Service</option>
-        </select>
-      </p>
-      <p>
-        <label>Preferred Date & Time / दिन और समय</label><br>
-        <input id="datetime" type="datetime-local" style="width:100%;padding:10px;margin-top:6px;border-radius:6px;border:1px solid #ccc;">
-      </p>
-      <p>
-        <button type="submit" class="btn">Book on WhatsApp / WhatsApp से बुक करें</button>
-      </p>
-      <p style="font-size:14px;color:#666">You will be redirected to WhatsApp to confirm your appointment.</p>
-    </form>
+    <form id="bookingForm" onsubmit="handleBooking(event)">
+  <h3>Book Appointment / अपॉइंटमेंट बुक करें</h3>
+
+  <input type="text" id="name" placeholder="Name / नाम" required
     <script>
       function sendWhatsApp(){
         var name = document.getElementById('name').value;
