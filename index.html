@@ -55,6 +55,14 @@
 
     footer { background:var(--dark); color:#ccc; text-align:center; padding:20px; font-size:14px; }
     @media (max-width:768px) { .hero h2 {font-size:32px} }
+
+/* Big professional booking form */
+.stylish-booking{max-width:520px;margin:0 auto;background:#ffffff;padding:34px 30px;border-radius:18px;box-shadow:0 16px 34px rgba(0,0,0,.12)}
+.stylish-booking h3{font-size:34px;margin:0 0 6px;color:#4b3fbf;letter-spacing:.4px}
+.stylish-booking .sub{margin:0 0 24px;color:#666;font-size:16px}
+.stylish-booking input,.stylish-booking select{width:100%;padding:14px 16px;margin-bottom:16px;border-radius:10px;border:1px solid #ddd;font-size:16px}
+.stylish-booking button{width:100%;padding:18px;border:none;border-radius:12px;background:linear-gradient(135deg,#25D366,#1fa855);color:#fff;font-size:20px;font-weight:700;cursor:pointer;box-shadow:0 8px 18px rgba(37,211,102,.45)}
+.stylish-booking button:hover{filter:brightness(1.05)}
   </style>
 </head>
 <body>
@@ -142,11 +150,63 @@
 <section id="appointment" class="section">
   <h3>Book Appointment / अपॉइंटमेंट बुक करें</h3>
   <div class="contact">
-    <form id="bookingForm" class="booking-form">
-  <h3>Book Appointment / अपॉइंटमेंट बुक करें</h3>
+    <form id="bookingForm" class="stylish-booking" onsubmit="sendBooking(event)">
+  <h3>Book Appointment</h3>
+  <p class="sub">अपॉइंटमेंट बुक करें</p>
 
-  <label>Name / नाम</label>
-  <input type="text" id="name" place
+  <input type="text" id="name" placeholder="👤 Name / नाम" required>
+  <input type="tel" id="phone" placeholder="📞 Phone / मोबाइल नंबर" required>
+
+  <select id="service" required>
+    <option value="">✂️ Select Service / सेवा चुनें</option>
+    <option>Haircut</option>
+    <option>Beard Trim</option>
+    <option>Hair Color</option>
+    <option>Facial</option>
+  </select>
+
+  <input type="datetime-local" id="datetime" required>
+
+  <button type="submit">📲 Book via WhatsApp + Email</button>
+</form>
+
+<form id="emailForm" action="https://formsubmit.co/jahid10297@gmail.com" method="POST" style="display:none;">
+  <input type="hidden" name="Name" id="e_name">
+  <input type="hidden" name="Phone" id="e_phone">
+  <input type="hidden" name="Service" id="e_service">
+  <input type="hidden" name="Date & Time" id="e_datetime">
+  <input type="hidden" name="_subject" value="New Salon Appointment">
+  <input type="hidden" name="_captcha" value="false">
+</form>
+
+<script>
+function sendBooking(e) {
+  e.preventDefault();
+
+  var name = document.getElementById('name').value;
+  var phone = document.getElementById('phone').value;
+  var service = document.getElementById('service').value;
+  var datetime = document.getElementById('datetime').value;
+
+  document.getElementById('e_name').value = name;
+  document.getElementById('e_phone').value = phone;
+  document.getElementById('e_service').value = service;
+  document.getElementById('e_datetime').value = datetime;
+
+  document.getElementById('emailForm').submit();
+
+  var message = 'Hello Style Unisex Salon
+
+I want to book an appointment:
+Name: ' + name + '
+Phone: ' + phone + '
+Service: ' + service + '
+Date & Time: ' + datetime;
+  var whatsappURL = 'https://wa.me/+918802680374?text=' + encodeURIComponent(message);
+
+  window.open(whatsappURL, '_blank');
+}
+</script>
     <script>
       function sendWhatsApp(){
         var name = document.getElementById('name').value;
@@ -171,7 +231,7 @@
 " +
                       "Date & Time: " + formattedDT;
 
-        var salonNumber = "918802680374";
+        var salonNumber = "+918802680374";
         var url = "https://wa.me/" + salonNumber + "?text=" + encodeURIComponent(message);
         window.open(url, '_blank');
         return false;
@@ -183,7 +243,7 @@
 <footer>
   <p>© 2026 Style Unisex Salon. All Rights Reserved.</p>
 <!-- Floating WhatsApp Button -->
-<a href="https://wa.me/918802680374" target="_blank" style="position:fixed;bottom:20px;right:20px;background:#25D366;color:white;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:28px;box-shadow:0 6px 14px rgba(0,0,0,.25);text-decoration:none;z-index:999">💬</a>
+<a href="https://wa.me/+918802680374" target="_blank" style="position:fixed;bottom:20px;right:20px;background:#25D366;color:white;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:28px;box-shadow:0 6px 14px rgba(0,0,0,.25);text-decoration:none;z-index:999">💬</a>
 
 <!-- Floating Call Button -->
 <a href="tel:+918802680374" style="position:fixed;bottom:20px;left:20px;background:#0b5ed7;color:white;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:26px;box-shadow:0 6px 14px rgba(0,0,0,.25);text-decoration:none;z-index:999">📞</a>
